@@ -1,0 +1,17 @@
+The goal here is to clearly distinguish our applications. This is my 
+first attempt at segregation, I'm sure it needs to be tweaked.
+
+SystemConfig -> A web based system config utility to allow us to 
+    setup, monitor, and maintain a site running the Lists framework.
+
+Lists -> Our list framework.
+
+TaskManager -> I'm interested in using something like gearman for this,
+    but the concept is that we'll need a task manager system to spawn
+    jobs to migrate data, clean up users, setup machines, etc etc
+    
+Websites -> Place for our actual HTML/CSS/JS type websites for this project.
+    Currently that would include the DataOCD, and soon to be Lists sites.
+    I've included DataOCD here because I think we'll need to publish 
+    docs (external & internal) there, so it'll probably pretty integrated
+    for the forseeable future. Ideally, I think we'll spin it out of here.
