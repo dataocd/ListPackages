@@ -1,6 +1,6 @@
 <?php
-namespace REST;
-class v1 implements \Lists\IController {
+namespace REST\Controller;
+class v1 implements \Lists\Controller\IController {
     public function __construct() {
     }
 
