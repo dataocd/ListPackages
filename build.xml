@@ -52,8 +52,8 @@
         <apply executable="php" logerror="true" failonerror="true">
             <arg value="-l" />
             <fileset dir="${basedir}">
-                <include name="tests/**/*.php" />
-                <include name="src/**/*.php" />
+                <include name="REST/tests/**/*.php" />
+                <include name="REST/src/**/*.php" />
                 <exclude name="tests/run/**/*.php" />
             </fileset>
         </apply>
@@ -66,7 +66,7 @@
                        --target ${builddir}/api 
                        --templatebase /usr/share/php/data/phpUnderControl/data/phpdoc/ 
                        --output HTML:Phpuc:phpuc
-                       --directory ${basedir}/src
+                       --directory ${basedir}/REST/src
                         -q"/>
         </exec>
     </target>
@@ -77,7 +77,7 @@
             <arg line="--report=checkstyle 
                        --standard=PEAR 
                        --report-file=${builddir}/logs/checkstyle.xml
-                       ${basedir}/src"/>
+                       ${basedir}/REST/src"/>
         </exec>
     </target>
 
@@ -89,7 +89,7 @@
                        --jdepend-chart=${builddir}/charts/jdepend.svg
                        --overview-pyramid=${builddir}/charts/overview-pyramid.svg
                        --coderank-mode=inheritance,property,method
-                       ${basedir}/src" />
+                       ${basedir}/REST/src" />
         </exec>
     </target>
 
@@ -97,14 +97,14 @@
     <target name="phpcpd" depends="init">
         <exec executable="phpcpd" failonerror="false">
             <arg line="--log-pmd ${builddir}/logs/pmd-cpd.xml
-                       ${basedir}/src" />
+                       ${basedir}/REST/src" />
         </exec>
     </target>
 
 <!-- PHPMD  -->
     <target name="phpmd" depends="init">
         <exec executable="phpmd" failonerror="false">
-            <arg line="${basedir}/src
+            <arg line="${basedir}/REST/src
                        xml
                        codesize,unusedcode,naming
                        --reportfile ${builddir}/logs/pmd.xml" />
