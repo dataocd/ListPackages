@@ -5,7 +5,9 @@ class v1 implements \Lists\Controller\IController {
     }
 
     public function execute($request) {
-        echo "hey bitch!";
+        echo $request->packageCommand.'<BR>';
+        echo $request->get('var');
+        echo 'This is the command to perform';
     }
 }
 ?>
